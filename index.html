@@ -607,22 +607,7 @@
   }
   footer p { font-size: 12px; color: var(--gray3); line-height: 2; }
 
-  /* ── FLOATING CTA ── */
-  .floating-cta {
-    position: fixed;
-    bottom: 0; left: 0; right: 0;
-    z-index: 99;
-    background: rgba(10,10,10,0.97);
-    border-top: 1px solid var(--gray1);
-    padding: 12px 20px;
-    display: none;
-    gap: 10px;
-    backdrop-filter: blur(10px);
-  }
-  .floating-cta.show { display: flex; }
-  .floating-cta .btn-line { flex: 1; font-size: 14px; padding: 14px 12px; }
-  .floating-cta .btn-tel { flex: 0 0 auto; padding: 14px 16px; font-size: 13px; }
-
+  
   /* ── ANIMATIONS ── */
   .fade-up {
     opacity: 0;
@@ -1074,14 +1059,7 @@
   <span style="font-size:11px;">外構・エクステリア業者・個人職人の方のホームページ制作を専門に承っております</span></p>
 </footer>
 
-<!-- FLOATING CTA -->
-<div class="floating-cta" id="floatingCta">
-  <a href="https://line.me/R/ti/p/@yourlineaccount" class="btn-line" target="_blank" rel="noopener">
-    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.145 2 11.243c0 2.945 1.414 5.573 3.627 7.31V22l3.309-1.823c.884.245 1.82.376 2.789.376 5.523 0 10-4.145 10-9.31S17.523 2 12 2z"/></svg>
-    LINE無料相談
-  </a>
-  <a href="tel:09000000000" class="btn-tel">📞 電話</a>
-</div>
+
 
 <script>
   // FAQ toggle
