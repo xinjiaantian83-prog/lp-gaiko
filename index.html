@@ -1,0 +1,1113 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>外構業者専門 ホームページ制作 | 問い合わせが増えるサイトを作ります</title>
+<meta name="description" content="外構・エクステリア業者専門のホームページ制作。現場経験10年以上のプロが、問い合わせが増える営業ツールを198,000円〜で制作します。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Oswald:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --black: #0a0a0a;
+    --dark: #111111;
+    --dark2: #1a1a1a;
+    --dark3: #222222;
+    --gray1: #2c2c2c;
+    --gray2: #3d3d3d;
+    --gray3: #555555;
+    --gray4: #888888;
+    --gray5: #b0b0b0;
+    --light: #d8d8d8;
+    --white: #f0f0f0;
+    --accent: #c8a96e;
+    --accent2: #e8c98e;
+    --line-green: #06C755;
+    --line-green-dark: #04a844;
+    --red: #e05252;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--black);
+    color: var(--white);
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: 400;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  /* ── HEADER ── */
+  .header {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    background: rgba(10,10,10,0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--gray1);
+    padding: 12px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .header-logo {
+    font-family: 'Oswald', sans-serif;
+    font-size: 16px;
+    letter-spacing: 0.1em;
+    color: var(--accent);
+  }
+  .header-cta {
+    background: var(--line-green);
+    color: #fff;
+    border: none;
+    padding: 8px 18px;
+    border-radius: 4px;
+    font-size: 13px;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: 700;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: background 0.2s;
+  }
+  .header-cta:hover { background: var(--line-green-dark); }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100svh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 100px 24px 60px;
+    position: relative;
+    overflow: hidden;
+    background: var(--black);
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background:
+      linear-gradient(135deg, rgba(200,169,110,0.06) 0%, transparent 50%),
+      repeating-linear-gradient(0deg, transparent, transparent 39px, rgba(255,255,255,0.02) 40px),
+      repeating-linear-gradient(90deg, transparent, transparent 39px, rgba(255,255,255,0.02) 40px);
+    pointer-events: none;
+  }
+  .hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 24px;
+    font-family: 'Oswald', sans-serif;
+  }
+  .hero-eyebrow::before {
+    content: '';
+    display: block;
+    width: 30px;
+    height: 1px;
+    background: var(--accent);
+  }
+  .hero-title {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: 900;
+    font-size: clamp(28px, 8vw, 52px);
+    line-height: 1.25;
+    letter-spacing: -0.02em;
+    margin-bottom: 12px;
+  }
+  .hero-title .accent { color: var(--accent); }
+  .hero-title .line-break { display: block; }
+  .hero-subtitle {
+    font-size: clamp(14px, 3.5vw, 18px);
+    color: var(--gray5);
+    font-weight: 300;
+    margin-bottom: 32px;
+    max-width: 560px;
+    line-height: 1.8;
+  }
+  .hero-badge-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 40px;
+  }
+  .hero-badge {
+    background: var(--gray1);
+    border: 1px solid var(--gray2);
+    color: var(--gray5);
+    font-size: 12px;
+    padding: 6px 14px;
+    border-radius: 2px;
+    letter-spacing: 0.05em;
+  }
+  .hero-badge.gold {
+    background: rgba(200,169,110,0.1);
+    border-color: var(--accent);
+    color: var(--accent);
+    font-weight: 700;
+  }
+  .hero-cta-group {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-width: 400px;
+  }
+  .btn-line {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: var(--line-green);
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+    font-family: 'Noto Sans JP', sans-serif;
+    text-decoration: none;
+    padding: 18px 24px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.15s;
+    position: relative;
+    overflow: hidden;
+  }
+  .btn-line::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, transparent 60%);
+  }
+  .btn-line:hover { background: var(--line-green-dark); transform: translateY(-1px); }
+  .btn-line svg { width: 22px; height: 22px; flex-shrink: 0; }
+  .btn-tel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: transparent;
+    color: var(--white);
+    font-size: 15px;
+    font-weight: 500;
+    font-family: 'Noto Sans JP', sans-serif;
+    text-decoration: none;
+    padding: 14px 24px;
+    border-radius: 6px;
+    border: 1px solid var(--gray2);
+    cursor: pointer;
+    transition: border-color 0.2s, color 0.2s;
+  }
+  .btn-tel:hover { border-color: var(--gray4); color: var(--white); }
+  .hero-scroll {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    color: var(--gray3);
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    animation: scrollBounce 2s infinite;
+  }
+  .hero-scroll::after {
+    content: '';
+    width: 1px;
+    height: 40px;
+    background: linear-gradient(to bottom, var(--gray3), transparent);
+  }
+  @keyframes scrollBounce {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(6px); }
+  }
+
+  /* ── SECTION BASE ── */
+  section { padding: 80px 24px; }
+  .section-label {
+    font-family: 'Oswald', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    color: var(--accent);
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .section-label::before {
+    content: '';
+    width: 24px;
+    height: 1px;
+    background: var(--accent);
+  }
+  .section-title {
+    font-weight: 900;
+    font-size: clamp(22px, 5.5vw, 38px);
+    line-height: 1.3;
+    margin-bottom: 16px;
+  }
+  .section-desc {
+    color: var(--gray5);
+    font-size: 14px;
+    line-height: 1.9;
+    max-width: 560px;
+    font-weight: 300;
+  }
+  .container { max-width: 760px; margin: 0 auto; }
+
+  /* ── PAIN ── */
+  .pain { background: var(--dark); }
+  .pain-grid {
+    margin-top: 40px;
+    display: grid;
+    gap: 1px;
+    background: var(--gray1);
+    border: 1px solid var(--gray1);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .pain-item {
+    background: var(--dark2);
+    padding: 20px 24px;
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+  }
+  .pain-icon {
+    width: 36px;
+    height: 36px;
+    flex-shrink: 0;
+    background: rgba(224,82,82,0.1);
+    border: 1px solid rgba(224,82,82,0.3);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--red);
+    font-size: 16px;
+  }
+  .pain-text { font-size: 14px; color: var(--light); line-height: 1.7; }
+  .pain-text strong { display: block; font-weight: 700; font-size: 15px; margin-bottom: 4px; }
+
+  /* ── SOLUTION ── */
+  .solution { background: var(--black); }
+  .solution-grid {
+    margin-top: 40px;
+    display: grid;
+    gap: 16px;
+  }
+  .sol-card {
+    background: var(--dark2);
+    border: 1px solid var(--gray1);
+    border-radius: 8px;
+    padding: 24px;
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.2s;
+  }
+  .sol-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 3px; height: 100%;
+    background: var(--accent);
+  }
+  .sol-card:hover { border-color: var(--gray2); }
+  .sol-num {
+    font-family: 'Oswald', sans-serif;
+    font-size: 40px;
+    font-weight: 700;
+    color: var(--gray1);
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+  .sol-title { font-size: 16px; font-weight: 700; margin-bottom: 8px; color: var(--white); }
+  .sol-desc { font-size: 13px; color: var(--gray5); line-height: 1.8; }
+
+  /* ── REASON ── */
+  .reason { background: var(--dark); }
+  .reason-highlight {
+    background: rgba(200,169,110,0.08);
+    border: 1px solid rgba(200,169,110,0.25);
+    border-radius: 8px;
+    padding: 24px;
+    margin-bottom: 36px;
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+  }
+  .reason-highlight-icon {
+    font-size: 32px;
+    flex-shrink: 0;
+  }
+  .reason-highlight-text { font-size: 14px; color: var(--light); line-height: 1.8; }
+  .reason-highlight-text strong {
+    display: block;
+    font-size: 17px;
+    font-weight: 900;
+    color: var(--accent);
+    margin-bottom: 6px;
+  }
+  .reason-list {
+    display: grid;
+    gap: 16px;
+    margin-top: 0;
+  }
+  .reason-item {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    padding: 18px 20px;
+    background: var(--dark2);
+    border-radius: 6px;
+    border: 1px solid var(--gray1);
+  }
+  .reason-check {
+    width: 28px; height: 28px;
+    background: var(--accent);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    color: var(--black);
+    font-size: 13px;
+    font-weight: 900;
+  }
+  .reason-item-text { font-size: 14px; color: var(--light); line-height: 1.7; }
+  .reason-item-text strong { font-size: 15px; font-weight: 700; display: block; margin-bottom: 4px; }
+
+  /* ── PRICE ── */
+  .price { background: var(--black); }
+  .price-card {
+    margin-top: 40px;
+    background: var(--dark2);
+    border: 1px solid var(--gray2);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  .price-header {
+    background: var(--gray1);
+    padding: 20px 24px;
+    border-bottom: 1px solid var(--gray2);
+  }
+  .price-header-label {
+    font-family: 'Oswald', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    color: var(--accent);
+    margin-bottom: 4px;
+  }
+  .price-header-title { font-size: 16px; font-weight: 700; }
+  .price-body { padding: 28px 24px; }
+  .price-amount {
+    font-family: 'Oswald', sans-serif;
+    font-size: clamp(40px, 12vw, 64px);
+    font-weight: 700;
+    color: var(--accent);
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .price-amount span { font-size: 20px; color: var(--gray5); font-weight: 400; }
+  .price-note { font-size: 11px; color: var(--gray4); margin-bottom: 24px; }
+  .price-includes { display: grid; gap: 10px; margin-bottom: 24px; }
+  .price-include-item {
+    display: flex;
+    gap: 10px;
+    font-size: 14px;
+    color: var(--light);
+  }
+  .price-include-item::before {
+    content: '✓';
+    color: var(--accent);
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+  .price-divider { border: none; border-top: 1px solid var(--gray1); margin: 20px 0; }
+  .price-plans { display: grid; gap: 12px; }
+  .price-plan {
+    background: var(--dark3);
+    border: 1px solid var(--gray1);
+    border-radius: 6px;
+    padding: 14px 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .price-plan-name { font-size: 13px; color: var(--gray5); }
+  .price-plan-price { font-family: 'Oswald', sans-serif; font-size: 18px; color: var(--white); }
+
+  /* ── FLOW ── */
+  .flow { background: var(--dark); }
+  .flow-steps { margin-top: 40px; display: grid; gap: 0; position: relative; }
+  .flow-step {
+    display: flex;
+    gap: 20px;
+    padding: 24px 0;
+    position: relative;
+  }
+  .flow-step:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    left: 19px;
+    top: 56px;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--gray2), var(--gray1));
+  }
+  .flow-num-wrap {
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--gray1);
+    border: 2px solid var(--gray2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Oswald', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--accent);
+    position: relative;
+    z-index: 1;
+  }
+  .flow-content { padding-top: 8px; }
+  .flow-title { font-size: 16px; font-weight: 700; margin-bottom: 6px; }
+  .flow-desc { font-size: 13px; color: var(--gray5); line-height: 1.7; }
+  .flow-period {
+    display: inline-flex;
+    background: rgba(200,169,110,0.12);
+    border: 1px solid rgba(200,169,110,0.3);
+    color: var(--accent);
+    font-size: 11px;
+    padding: 3px 10px;
+    border-radius: 20px;
+    margin-top: 6px;
+    letter-spacing: 0.05em;
+  }
+
+  /* ── FAQ ── */
+  .faq { background: var(--black); }
+  .faq-list { margin-top: 40px; display: grid; gap: 1px; background: var(--gray1); border: 1px solid var(--gray1); border-radius: 8px; overflow: hidden; }
+  .faq-item { background: var(--dark2); }
+  .faq-q {
+    padding: 20px 24px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 16px;
+    user-select: none;
+    color: var(--white);
+  }
+  .faq-q::before {
+    content: 'Q.';
+    font-family: 'Oswald', sans-serif;
+    color: var(--accent);
+    font-size: 16px;
+    flex-shrink: 0;
+  }
+  .faq-q-text { flex: 1; line-height: 1.6; }
+  .faq-toggle {
+    flex-shrink: 0;
+    width: 22px; height: 22px;
+    border-radius: 50%;
+    background: var(--gray1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    color: var(--accent);
+    transition: transform 0.25s;
+    margin-top: 1px;
+  }
+  .faq-item.open .faq-toggle { transform: rotate(45deg); }
+  .faq-a {
+    display: none;
+    padding: 0 24px 20px 44px;
+    font-size: 13px;
+    color: var(--gray5);
+    line-height: 1.9;
+    border-top: 1px solid var(--gray1);
+    padding-top: 16px;
+  }
+  .faq-item.open .faq-a { display: block; }
+
+  /* ── CTA ── */
+  .cta-section {
+    background: var(--dark2);
+    padding: 80px 24px;
+    text-align: center;
+    border-top: 1px solid var(--gray1);
+    border-bottom: 1px solid var(--gray1);
+  }
+  .cta-title {
+    font-weight: 900;
+    font-size: clamp(22px, 6vw, 36px);
+    line-height: 1.4;
+    margin-bottom: 12px;
+  }
+  .cta-desc {
+    font-size: 14px;
+    color: var(--gray5);
+    font-weight: 300;
+    margin-bottom: 36px;
+    line-height: 1.8;
+  }
+  .cta-group {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  .cta-note {
+    font-size: 11px;
+    color: var(--gray3);
+    margin-top: 12px;
+    line-height: 1.7;
+  }
+  .cta-tel-big {
+    font-family: 'Oswald', sans-serif;
+    font-size: clamp(24px, 7vw, 38px);
+    font-weight: 700;
+    color: var(--white);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 16px 24px;
+    border: 1px solid var(--gray2);
+    border-radius: 6px;
+    transition: border-color 0.2s;
+  }
+  .cta-tel-big:hover { border-color: var(--gray4); }
+  .cta-hours { font-size: 12px; color: var(--gray4); margin-top: 8px; }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--black);
+    padding: 32px 24px;
+    text-align: center;
+    border-top: 1px solid var(--gray1);
+  }
+  footer p { font-size: 12px; color: var(--gray3); line-height: 2; }
+
+  /* ── FLOATING CTA ── */
+  .floating-cta {
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+    z-index: 99;
+    background: rgba(10,10,10,0.97);
+    border-top: 1px solid var(--gray1);
+    padding: 12px 20px;
+    display: none;
+    gap: 10px;
+    backdrop-filter: blur(10px);
+  }
+  .floating-cta.show { display: flex; }
+  .floating-cta .btn-line { flex: 1; font-size: 14px; padding: 14px 12px; }
+  .floating-cta .btn-tel { flex: 0 0 auto; padding: 14px 16px; font-size: 13px; }
+
+  /* ── ANIMATIONS ── */
+  .fade-up {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .fade-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ── DIVIDER ── */
+  .divider-line {
+    border: none;
+    border-top: 1px solid var(--gray1);
+    margin: 0;
+  }
+
+  /* ── TRUST BAR ── */
+  .trust-bar {
+    background: var(--gray1);
+    padding: 16px 24px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+  }
+  .trust-item {
+    font-size: 12px;
+    color: var(--gray5);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    letter-spacing: 0.05em;
+  }
+  .trust-item::before { content: '◆'; color: var(--accent); font-size: 8px; }
+
+  /* responsive tweaks */
+  @media (min-width: 600px) {
+    .hero-cta-group { flex-direction: row; }
+    .btn-line, .btn-tel { flex: 1; }
+    .solution-grid { grid-template-columns: 1fr 1fr; }
+    .reason-list { grid-template-columns: 1fr 1fr; }
+    .price-plans { grid-template-columns: 1fr 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="header-logo">GAIKO WEB</div>
+  <a href="#cta" class="header-cta">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.145 2 11.243c0 2.945 1.414 5.573 3.627 7.31V22l3.309-1.823c.884.245 1.82.376 2.789.376 5.523 0 10-4.145 10-9.31S17.523 2 12 2z"/></svg>
+    LINE で無料相談
+  </a>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-eyebrow">For Exterior Contractors</div>
+    <h1 class="hero-title">
+      <span class="line-break">外構業者のための、</span>
+      <span class="line-break accent">問い合わせが増える</span>
+      <span class="line-break">ホームページを</span>
+      <span class="line-break">作ります。</span>
+    </h1>
+    <p class="hero-subtitle">
+      現場経験10年以上。<br>
+      外構工事の「売れる見せ方」を知っているから、<br>
+      ただ綺麗なだけじゃない、仕事に直結するサイトが作れます。
+    </p>
+    <div class="hero-badge-row">
+      <span class="hero-badge gold">現場経験10年以上</span>
+      <span class="hero-badge">外構専門</span>
+      <span class="hero-badge">問い合わせ導線設計</span>
+      <span class="hero-badge">スマホ最適化</span>
+    </div>
+    <div class="hero-cta-group">
+      <a href="https://line.me/R/ti/p/@yourlineaccount" class="btn-line" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.145 2 11.243c0 2.945 1.414 5.573 3.627 7.31V22l3.309-1.823c.884.245 1.82.376 2.789.376 5.523 0 10-4.145 10-9.31S17.523 2 12 2z"/></svg>
+        LINEで無料相談する
+      </a>
+      <a href="tel:09000000000" class="btn-tel">
+        📞 電話で相談する
+      </a>
+    </div>
+  </div>
+  <div class="hero-scroll">SCROLL</div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <span class="trust-item">外構現場経験10年以上</span>
+  <span class="trust-item">納品実績 多数</span>
+  <span class="trust-item">最短3週間納品</span>
+  <span class="trust-item">制作後サポートあり</span>
+  <span class="trust-item">完全オーダーメイド</span>
+</div>
+
+<!-- PAIN -->
+<section class="pain">
+  <div class="container">
+    <div class="section-label fade-up">Problem</div>
+    <h2 class="section-title fade-up">こんなお悩み、<br>ありませんか？</h2>
+    <p class="section-desc fade-up">外構・エクステリア業者が抱える「ホームページの悩み」、<br>すべて解決します。</p>
+    <div class="pain-grid fade-up" style="margin-top:36px;">
+      <div class="pain-item">
+        <div class="pain-icon">✗</div>
+        <div class="pain-text">
+          <strong>ホームページがないから信用されない</strong>
+          口コミだけに頼っていて、新規客が取れない。「会社のサイトを見せて」と言われて困っている。
+        </div>
+      </div>
+      <div class="pain-item">
+        <div class="pain-icon">✗</div>
+        <div class="pain-text">
+          <strong>作ったけど問い合わせがゼロ</strong>
+          お金をかけて作ったのに全然反応がない。どこに問題があるかもわからない。
+        </div>
+      </div>
+      <div class="pain-item">
+        <div class="pain-icon">✗</div>
+        <div class="pain-text">
+          <strong>IT業者に頼んでも「外構」がわからない</strong>
+          デザインはいいけど、専門用語や現場感が全然伝わらない仕上がりになってしまった。
+        </div>
+      </div>
+      <div class="pain-item">
+        <div class="pain-icon">✗</div>
+        <div class="pain-text">
+          <strong>スマホで見ると文字が小さくて見づらい</strong>
+          今の時代、ほとんどの人がスマホで検索している。でもサイトがスマホに対応していない。
+        </div>
+      </div>
+      <div class="pain-item">
+        <div class="pain-icon">✗</div>
+        <div class="pain-text">
+          <strong>相見積もりで価格競争になってしまう</strong>
+          ホームページで価値を伝えられていないから、値段だけで判断されてしまう。
+        </div>
+      </div>
+      <div class="pain-item">
+        <div class="pain-icon">✗</div>
+        <div class="pain-text">
+          <strong>更新が面倒で放置している</strong>
+          昔に作ったまま更新できていない。施工例も増えているのに掲載できていない。
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider-line">
+
+<!-- SOLUTION -->
+<section class="solution">
+  <div class="container">
+    <div class="section-label fade-up">Solution</div>
+    <h2 class="section-title fade-up">私が解決する、<br><span style="color:var(--accent)">4つのこと</span></h2>
+    <p class="section-desc fade-up">「見た目がいいサイト」ではなく、<br>「仕事が取れるサイト」を作ります。</p>
+    <div class="solution-grid fade-up">
+      <div class="sol-card">
+        <div class="sol-num">01</div>
+        <div class="sol-title">問い合わせ導線の設計</div>
+        <div class="sol-desc">訪問者が「相談したい」と思った瞬間に行動できるよう、LINE・電話への導線をページ全体に最適配置します。</div>
+      </div>
+      <div class="sol-card">
+        <div class="sol-num">02</div>
+        <div class="sol-title">外構専門の言葉で伝える</div>
+        <div class="sol-desc">カーポート・フェンス・アプローチ・駐車場など、施主に響く外構の言葉と価値の見せ方を熟知しています。</div>
+      </div>
+      <div class="sol-card">
+        <div class="sol-num">03</div>
+        <div class="sol-title">スマホ完全対応</div>
+        <div class="sol-desc">スマホでの見やすさ・使いやすさを最優先。「スマホで検索→すぐ問い合わせ」の流れを作ります。</div>
+      </div>
+      <div class="sol-card">
+        <div class="sol-num">04</div>
+        <div class="sol-title">価値で選ばれる設計</div>
+        <div class="sol-desc">施工例・こだわり・対応エリアを効果的に見せ、「金額だけ」ではなく「あなたに頼みたい」と思わせます。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LINE CTA (MID) -->
+<div style="background:var(--dark2);padding:48px 24px;border-top:1px solid var(--gray1);border-bottom:1px solid var(--gray1);">
+  <div class="container" style="text-align:center;">
+    <p style="font-size:13px;color:var(--gray5);margin-bottom:20px;">まずは気軽に相談してみてください。見積もり・相談は完全無料です。</p>
+    <div class="cta-group">
+      <a href="https://line.me/R/ti/p/@yourlineaccount" class="btn-line" target="_blank" rel="noopener" style="font-size:16px;padding:20px 24px;">
+        <svg viewBox="0 0 24 24" fill="currentColor" style="width:22px;height:22px;"><path d="M12 2C6.477 2 2 6.145 2 11.243c0 2.945 1.414 5.573 3.627 7.31V22l3.309-1.823c.884.245 1.82.376 2.789.376 5.523 0 10-4.145 10-9.31S17.523 2 12 2z"/></svg>
+        LINEで無料相談・お見積り
+      </a>
+    </div>
+    <p style="font-size:11px;color:var(--gray3);margin-top:12px;">相談後の強引なセールスは一切ありません</p>
+  </div>
+</div>
+
+<!-- REASON -->
+<section class="reason">
+  <div class="container">
+    <div class="section-label fade-up">Why Choose Us</div>
+    <h2 class="section-title fade-up">選ばれる理由</h2>
+    <div class="reason-highlight fade-up">
+      <div class="reason-highlight-icon">🏗️</div>
+      <div class="reason-highlight-text">
+        <strong>外構現場を10年以上、肌で知っている</strong>
+        私自身が外構の現場に携わってきた経験があります。施主がどんな不安を持ち、どんな情報を求めているか。業者がどんな強みをアピールすべきか。現場目線だからこそわかる「売れるホームページ」を作れます。
+      </div>
+    </div>
+    <div class="reason-list">
+      <div class="reason-item fade-up">
+        <div class="reason-check">✓</div>
+        <div class="reason-item-text">
+          <strong>営業視点で設計する</strong>
+          単なるデザイナーではなく、「どうすれば仕事につながるか」を考えて設計します。
+        </div>
+      </div>
+      <div class="reason-item fade-up">
+        <div class="reason-check">✓</div>
+        <div class="reason-item-text">
+          <strong>外構業界の言葉を使える</strong>
+          専門用語・工種・施工プロセスを正確に理解しているため、ズレのない表現ができます。
+        </div>
+      </div>
+      <div class="reason-item fade-up">
+        <div class="reason-check">✓</div>
+        <div class="reason-item-text">
+          <strong>シンプルで見やすいデザイン</strong>
+          装飾過多にならず、必要な情報を必要なタイミングで届ける設計を徹底します。
+        </div>
+      </div>
+      <div class="reason-item fade-up">
+        <div class="reason-check">✓</div>
+        <div class="reason-item-text">
+          <strong>納品後もサポートします</strong>
+          制作して終わりではなく、修正・更新のサポートも対応可能。長く使えるサイトを提供します。
+        </div>
+      </div>
+      <div class="reason-item fade-up">
+        <div class="reason-check">✓</div>
+        <div class="reason-item-text">
+          <strong>LINEで気軽に連絡できる</strong>
+          制作中も納品後も、LINEで気軽に連絡できます。対応は迅速・丁寧を心がけています。
+        </div>
+      </div>
+      <div class="reason-item fade-up">
+        <div class="reason-check">✓</div>
+        <div class="reason-item-text">
+          <strong>個人・一人親方にも対応</strong>
+          大きな制作会社に頼むほどではない…という個人職人の方からのご依頼も歓迎します。
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICE -->
+<section class="price">
+  <div class="container">
+    <div class="section-label fade-up">Pricing</div>
+    <h2 class="section-title fade-up">料金プラン</h2>
+    <p class="section-desc fade-up">シンプルな料金体系。追加費用なし、全て込みの価格です。</p>
+    <div class="price-card fade-up">
+      <div class="price-header">
+        <div class="price-header-label">STANDARD PLAN</div>
+        <div class="price-header-title">外構業者向け ホームページ制作</div>
+      </div>
+      <div class="price-body">
+        <div class="price-amount">¥198,000<span>〜（税込）</span></div>
+        <div class="price-note">※ページ数・ご要望により変動します。お気軽にお見積もりください。</div>
+        <div class="price-includes">
+          <div class="price-include-item">トップページ + サービスページ + 施工例 + 問い合わせページ</div>
+          <div class="price-include-item">スマートフォン完全対応</div>
+          <div class="price-include-item">LINE・電話問い合わせ導線設置</div>
+          <div class="price-include-item">施工エリア・料金目安の記載サポート</div>
+          <div class="price-include-item">お問い合わせフォーム設置</div>
+          <div class="price-include-item">納品後1ヶ月の修正サポート</div>
+          <div class="price-include-item">ドメイン・サーバー設定サポート</div>
+        </div>
+        <hr class="price-divider">
+        <div style="font-size:13px;color:var(--gray4);margin-bottom:14px;">オプション目安</div>
+        <div class="price-plans">
+          <div class="price-plan">
+            <div class="price-plan-name">追加ページ（1P）</div>
+            <div class="price-plan-price">+¥22,000〜</div>
+          </div>
+          <div class="price-plan">
+            <div class="price-plan-name">ブログ・施工例機能</div>
+            <div class="price-plan-price">+¥33,000〜</div>
+          </div>
+          <div class="price-plan">
+            <div class="price-plan-name">ロゴ制作</div>
+            <div class="price-plan-price">+¥33,000〜</div>
+          </div>
+          <div class="price-plan">
+            <div class="price-plan-name">月次保守・更新</div>
+            <div class="price-plan-price">¥5,500/月〜</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FLOW -->
+<section class="flow" style="background:var(--dark);">
+  <div class="container">
+    <div class="section-label fade-up">Process</div>
+    <h2 class="section-title fade-up">制作の流れ</h2>
+    <p class="section-desc fade-up">ご連絡から納品まで、最短3週間。<br>忙しい現場仕事の合間でも進められます。</p>
+    <div class="flow-steps fade-up">
+      <div class="flow-step">
+        <div class="flow-num-wrap">1</div>
+        <div class="flow-content">
+          <div class="flow-title">LINEまたは電話でご相談</div>
+          <div class="flow-desc">まずは気軽にご連絡ください。現在の状況・希望・予算などをお聞きします。見積もり・相談は完全無料です。</div>
+          <span class="flow-period">当日〜翌日</span>
+        </div>
+      </div>
+      <div class="flow-step">
+        <div class="flow-num-wrap">2</div>
+        <div class="flow-content">
+          <div class="flow-title">ヒアリング・お見積もり</div>
+          <div class="flow-desc">業種・エリア・アピールしたいポイント・ご予算をヒアリング。詳細なお見積もりをご提示します。</div>
+          <span class="flow-period">2〜3日</span>
+        </div>
+      </div>
+      <div class="flow-step">
+        <div class="flow-num-wrap">3</div>
+        <div class="flow-content">
+          <div class="flow-title">構成・デザイン提案</div>
+          <div class="flow-desc">ページ構成案とデザインカラーをご提案。ご希望に合わせて調整します。写真・文章の準備はサポートします。</div>
+          <span class="flow-period">1週間</span>
+        </div>
+      </div>
+      <div class="flow-step">
+        <div class="flow-num-wrap">4</div>
+        <div class="flow-content">
+          <div class="flow-title">制作・確認</div>
+          <div class="flow-desc">制作後にプレビュー確認いただきます。修正は2回まで無料。細かい部分もしっかり対応します。</div>
+          <span class="flow-period">1〜2週間</span>
+        </div>
+      </div>
+      <div class="flow-step">
+        <div class="flow-num-wrap">5</div>
+        <div class="flow-content">
+          <div class="flow-title">公開・納品</div>
+          <div class="flow-desc">ドメイン・サーバー設定を行い公開。納品後1ヶ月は無料サポート期間です。安心してお使いください。</div>
+          <span class="flow-period">公開〜</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq">
+  <div class="container">
+    <div class="section-label fade-up">FAQ</div>
+    <h2 class="section-title fade-up">よくある質問</h2>
+    <div class="faq-list fade-up">
+      <div class="faq-item">
+        <div class="faq-q">
+          <span class="faq-q-text">写真や文章は自分で用意しないといけませんか？</span>
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-a">施工写真はスマホで撮ったものでOKです。文章は私がヒアリングして作成することもできます（文章制作込みプランあり）。お気軽にご相談ください。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">
+          <span class="faq-q-text">パソコンが苦手でも大丈夫ですか？</span>
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-a">もちろん大丈夫です。LINEでやり取りしながら進めますので、PCが苦手な方でも安心してお任せください。ドメイン取得やサーバー設定も一緒に行います。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">
+          <span class="faq-q-text">納品後に自分でも更新できますか？</span>
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-a">WordPressを使って制作する場合、簡単な更新（施工例追加・お知らせ投稿など）はご自身でも行っていただけます。操作方法もレクチャーします。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">
+          <span class="faq-q-text">既存のホームページのリニューアルも対応できますか？</span>
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-a">はい、リニューアルも承っております。現在のサイトを確認した上でご提案します。まずは現状のURLをLINEでお送りください。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">
+          <span class="faq-q-text">支払い方法・タイミングはどうなりますか？</span>
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-a">銀行振込となります。着手金50%・納品時残金50%の2回払いが基本です。分割等のご相談もお気軽にどうぞ。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">
+          <span class="faq-q-text">個人の一人親方でも依頼できますか？</span>
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-a">もちろんです。個人の職人さんからのご依頼も多くお受けしています。規模に関わらず、丁寧に対応します。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">
+          <span class="faq-q-text">SEO対策はしてもらえますか？</span>
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-a">基本的なSEO設定（メタタグ・構造化・表示速度最適化など）は標準で行います。本格的なSEO対策はオプションでご相談ください。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<div class="cta-section" id="cta">
+  <div class="container">
+    <div class="section-label" style="justify-content:center;margin-bottom:20px;">Contact</div>
+    <h2 class="cta-title fade-up">まずは、無料で<br>相談してみてください。</h2>
+    <p class="cta-desc fade-up">
+      見積もり・相談は完全無料。<br>
+      「どんなサイトが合うか聞きたい」だけでも大歓迎です。<br>
+      LINEのメッセージ一通から始められます。
+    </p>
+    <div class="cta-group fade-up">
+      <a href="https://line.me/R/ti/p/@yourlineaccount" class="btn-line" target="_blank" rel="noopener" style="font-size:17px;padding:22px 24px;">
+        <svg viewBox="0 0 24 24" fill="currentColor" style="width:24px;height:24px;"><path d="M12 2C6.477 2 2 6.145 2 11.243c0 2.945 1.414 5.573 3.627 7.31V22l3.309-1.823c.884.245 1.82.376 2.789.376 5.523 0 10-4.145 10-9.31S17.523 2 12 2z"/></svg>
+        LINEで無料相談する（メイン）
+      </a>
+      <a href="tel:09000000000" class="cta-tel-big">
+        📞 090-0000-0000
+      </a>
+      <p class="cta-hours">受付時間：平日 8:00〜20:00 ／ 土日祝も対応可</p>
+    </div>
+    <p class="cta-note">
+      ※ご連絡いただいた後の強引な営業・勧誘は一切行いません。<br>
+      ※お見積もりは無料です。気軽にご連絡ください。
+    </p>
+  </div>
+</div>
+
+<footer>
+  <p>© 2024 外構業者専門 ホームページ制作<br>
+  <span style="font-size:11px;">外構・エクステリア業者・個人職人の方のホームページ制作を専門に承っております</span></p>
+</footer>
+
+<!-- FLOATING CTA -->
+<div class="floating-cta" id="floatingCta">
+  <a href="https://line.me/R/ti/p/@yourlineaccount" class="btn-line" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.145 2 11.243c0 2.945 1.414 5.573 3.627 7.31V22l3.309-1.823c.884.245 1.82.376 2.789.376 5.523 0 10-4.145 10-9.31S17.523 2 12 2z"/></svg>
+    LINE無料相談
+  </a>
+  <a href="tel:09000000000" class="btn-tel">📞 電話</a>
+</div>
+
+<script>
+  // FAQ toggle
+  document.querySelectorAll('.faq-q').forEach(q => {
+    q.addEventListener('click', () => {
+      const item = q.closest('.faq-item');
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+    });
+  });
+
+  // Fade-up observer
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+  // Floating CTA show on scroll
+  const floatingCta = document.getElementById('floatingCta');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 400) floatingCta.classList.add('show');
+    else floatingCta.classList.remove('show');
+  });
+</script>
+</body>
+</html>
